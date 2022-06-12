@@ -34,6 +34,7 @@ public class JumPClumb : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if (!GameManager.Instance.IsStarted) return;
         // --  二段ジャンプ防止処理 -- 
         // -- ストーンに触れているとき
         if (_tochedStonFlag)
@@ -64,9 +65,7 @@ public class JumPClumb : MonoBehaviour
                     _jumpCounter = _jumpCountMax;
                 }
             }
-            else
-            {
-                if (Input.GetKeyUp(KeyCode.Space))
+            else if (Input.GetKeyUp(KeyCode.Space))
                 {
                     _jumpingFlag = true;
                     _tochedStonFlag = false;
@@ -80,7 +79,6 @@ public class JumPClumb : MonoBehaviour
                     rigidbody.AddForce(transform.up * PowerCalc(_jumpCounter), ForceMode2D.Impulse);
                     _jumpCounter = 0;
                 }
-            }
         }
         _donotTochCounter -= Time.fixedDeltaTime;
         if(_donotTochCounter <= 0)

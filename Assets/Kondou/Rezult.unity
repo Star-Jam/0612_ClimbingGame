@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &116634078
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c38bc9a83256a449a3e3f964dcc6bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadSceneName: 
+  _loadSceneName: Play
 --- !u!1 &1531586106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1244,7 @@ GameObject:
   - component: {fileID: 2049719407}
   - component: {fileID: 2049719409}
   - component: {fileID: 2049719408}
+  - component: {fileID: 2049719410}
   m_Layer: 5
   m_Name: TimeText
   m_TagString: Untagged
@@ -1314,3 +1315,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049719406}
   m_CullTransparentMesh: 1
+--- !u!114 &2049719410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049719406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c898a1905f96894ba984ff9f8085fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeText: {fileID: 2049719408}

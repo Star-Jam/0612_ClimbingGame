@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Kondou/Title.unity
     guid: 9f86d3f7e7e7aa943b75ebe9e62acf6b
   - enabled: 1
+    path: Assets/Kondou/Play.unity
+    guid: 960130e00c2ea3b4386816c46e73870d
+  - enabled: 1
     path: Assets/Kondou/Rezult.unity
     guid: 282956a61c8290b4cb9c4e28259413a8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Toyonaga/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

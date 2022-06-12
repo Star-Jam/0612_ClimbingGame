@@ -59,6 +59,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     private async void GameEnd(GameObject panel)
     {
         panel.SetActive(true);
+        DataManager.SetTime(_timerText.text);
         await Task.Delay(_resultCount);
         SceneLoder.LoadScene("Rezult");
     }
