@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class JumPClumb : MonoBehaviour
 {
-
-    // �ϐ�
-    private float _time;            // �o�ߎ��Ԋi�[
-    private float _timeCounter;     // 
     private float _jumpCounter;     // �W�����v���ߎ��Ԋi�[
     private bool _jumpingFlag;      // �W�����v���ߒ� 
     private bool _tochedStonFlag;   //
@@ -19,20 +15,19 @@ public class JumPClumb : MonoBehaviour
     [SerializeField] float _lateralSpeed = 5.0F;         // m/s
     // �R���|�[�l���g�ǉ� (����z��)
     Rigidbody2D rigidbody;
+    Animator animator;
 
 
     // Start is called before the first frame update
     private void Start()
     {
-        // -- ������ -- 
-        _time = 0;
-        _timeCounter = 0;
         _jumpCounter = 0;
         _donotTochCounter = 0;
         _donotTochFlag = false;
         _jumpingFlag = false;
         _tochedStonFlag = false;
         rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -75,6 +70,7 @@ public class JumPClumb : MonoBehaviour
                 {
                     _jumpingFlag = true;
                     _tochedStonFlag = false;
+                    animator.SetBool("IsJump", true);
                     // ストーンから離れる
                     this.rigidbody.constraints = RigidbodyConstraints2D.None;
                     // ストーンから離れた後、指定時間
@@ -86,30 +82,11 @@ public class JumPClumb : MonoBehaviour
                 }
             }
         }
-
-        // -- ���ԊǗ� --
-        _time += Time.fixedDeltaTime;
         _donotTochCounter -= Time.fixedDeltaTime;
         if(_donotTochCounter <= 0)
         {
             _donotTochCounter = 0;
         }
-    }
-
-
-    bool IsJumping()
-    {
-        // -- プレイヤーの速度の大きさを判別し、ジャンプ中かを判定 --
-        
-            if (rigidbody.velocity.magnitude > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-      
     }
 
     float PowerCalc(float count)
@@ -140,6 +117,7 @@ public class JumPClumb : MonoBehaviour
         {
             _tochedStonFlag = true;
             _jumpingFlag = false;
+            animator.SetBool("IsJump", false);
             Debug.Log(_tochedStonFlag + " " + _jumpingFlag);
         }
         
