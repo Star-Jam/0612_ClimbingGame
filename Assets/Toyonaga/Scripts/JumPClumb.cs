@@ -118,6 +118,10 @@ public class JumPClumb : MonoBehaviour
             animator.SetBool("IsJump", false);
             Debug.Log(_tochedStonFlag + " " + _jumpingFlag);
         }
+        if(other.tag == "Goal")
+        {
+            GameManager.Instance.GameClear();
+        }
         
     }
 
