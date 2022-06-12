@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 572620125}
   - component: {fileID: 572620124}
   - component: {fileID: 572620123}
+  - component: {fileID: 572620126}
   m_Layer: 5
   m_Name: BackTitleButton
   m_TagString: Untagged
@@ -372,16 +373,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 2a2c082cec12cc744924cc91b4f910fd, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 572620126}
+        m_TargetAssemblyTypeName: OnClickSceneLoader, Assembly-CSharp
+        m_MethodName: OnClickSceneLoad
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Title
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &572620124
@@ -422,6 +423,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572620121}
   m_CullTransparentMesh: 1
+--- !u!114 &572620126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572620121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c38bc9a83256a449a3e3f964dcc6bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadSceneName: Title
 --- !u!1 &798083779
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +870,7 @@ GameObject:
   - component: {fileID: 1518568050}
   - component: {fileID: 1518568049}
   - component: {fileID: 1518568048}
+  - component: {fileID: 1518568051}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -928,10 +943,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 2a2c082cec12cc744924cc91b4f910fd, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 1518568051}
+        m_TargetAssemblyTypeName: OnClickSceneLoader, Assembly-CSharp
+        m_MethodName: OnClickSceneLoad
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -978,6 +993,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518568046}
   m_CullTransparentMesh: 1
+--- !u!114 &1518568051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518568046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c38bc9a83256a449a3e3f964dcc6bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadSceneName: 
 --- !u!1 &1531586106
 GameObject:
   m_ObjectHideFlags: 0
