@@ -5,7 +5,11 @@ using System;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
+    public bool IsStarted => _isStarted;
+    public bool IsGameEnd => _isGameEnd;
+
     bool _isStarted = false;
+    bool _isGameEnd = false;
 
     public Action OnGameStart;
     public Action OnGameClear;
@@ -33,11 +37,13 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public void GameClear()
     {
+        _isGameEnd = true;
         OnGameClear?.Invoke();
     }
 
     public void GameOver()
     {
+        _isGameEnd = true;
         OnGameOver?.Invoke();
     }
 }
